@@ -1,0 +1,24 @@
+<h1 class="heading">Answer the Survey</h1>
+<h1 style="text-align: center; margin-top: 60px; font-size: 30px;">{{survey.question}}</h1>
+<form #submitForm="ngForm" (ngSubmit)="submitResponse()">
+    <mat-form-field class="full-w" appearance="outline">
+        <mat-label>Enter your name</mat-label>
+        <input id="name" required name="name" [(ngModel)]="response.name" type="text" matInput
+            placeholder="Enter Your name">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="full-w" appearance="outline">
+        <mat-label>Enter you email</mat-label>
+        <input id="email" required name="email" [(ngModel)]="response.email" type="text" matInput
+            placeholder="Enter Your email">
+        <mat-icon matSuffix>alternate_email</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="full-w" appearance="outline">
+        <mat-label>Your Answer</mat-label>
+        <input id="answer" required name="answer" [(ngModel)]="response.answer" type="text" matInput
+            placeholder="Enter Your answer">
+        <mat-icon matSuffix>chat</mat-icon>
+    </mat-form-field>
+    <button class="btn" type="submit" [disabled]="submitForm.invalid" mat-raised-button color="primary">Submit
+        Response</button>
+</form>

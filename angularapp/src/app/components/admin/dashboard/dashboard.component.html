@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="icon">edit</mat-icon>
+            Create a Survey
+        </ng-template>
+        <h1 class="heading">Create a new Survey</h1>
+        <form #createForm="ngForm" (ngSubmit)="createSurvey()">
+            <mat-form-field class="full-w" appearance="outline">
+                <mat-label>Question</mat-label>
+                <input id="question" required name="question" [(ngModel)]="survey.question" type="text" matInput
+                    placeholder="Enter Quesion">
+                <mat-icon matSuffix>help_outline</mat-icon>
+            </mat-form-field>
+            <button class="btn" type="submit" [disabled]="createForm.invalid" mat-raised-button
+                color="primary">Create</button>
+        </form>
+        <ng-container>
+            <div class="url">
+                <mat-card *ngIf="survey.url!=null&&survey.url!=''">
+                    <mat-card-title style="color: rgb(0, 26, 255); margin-top:150px; font-size: 28px;">Your
+                        survey URL
+                        (This is a public URL)</mat-card-title>
+                    <mat-card-content style="margin-top:30px; font-size: 20px;"> <strong>Unique URL:</strong>
+                        &nbsp;&nbsp;&nbsp;<a target="_blank" href="{{survey.url}}">{{survey.url}}</a>
+                    </mat-card-content>
+                    <mat-card-content style="margin-top:20px; font-size: 20px;"> <strong>Unique Code:</strong>
+                        &nbsp;&nbsp;&nbsp;{{uniqueKey}}
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </ng-container>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="icon">manage_history</mat-icon>
+            Manage Surveys
+        </ng-template>
+        <button style="margin:10px 0px 20px 70px; font-size: 23px;" (click)="getSurveys()" mat-icon-button>
+            Refresh
+            <mat-icon>sync</mat-icon>
+        </button>
+        <div class="msg" *ngIf="surveys==null||surveys.length==0">
+            Surveys That you Create Will Appear Here
+        </div>
+        <ng-container *ngFor="let s of surveys">
+            <mat-list class="card-x">
+                <mat-list-item style="padding-left:30px;">
+                    <div mat-line style="font-size: 20px;">Question:&nbsp;{{s.question}}</div>
+                    <div mat-line style="font-size: 16px; margin-top: 10px;">URL:&nbsp;<a target="_blank"
+                            href="{{s.url}}">{{s.url}}</a>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <button mat-raised-button color="primary" (click)="view(s)" style="margin: 10px;">
+                        View Responses
+                    </button>
+                    <button (click)="edit(s)" mat-mini-fab color="accent" style="margin: 10px">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button (click)="delete(s)" mat-mini-fab color="warn" style="margin: 10px;">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-list-item>
+            </mat-list>
+        </ng-container>
+    </mat-tab>
+</mat-tab-group>

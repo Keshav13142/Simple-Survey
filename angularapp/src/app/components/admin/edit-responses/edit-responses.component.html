@@ -1,0 +1,28 @@
+<h1 mat-dialog-title class="text-center">Edit Survey</h1>
+<div mat-dialog-content>
+    <div class="bootstrap-wrapper">
+        <div class="row" style=" margin-top: 30px;">
+            <div class="col-md-14 offset-md-0">
+                <form #signupForm="ngForm" (ngSubmit)="edit()">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>URL</mat-label>
+                        <input id="url" disabled required name="url" [(ngModel)]="survey.url" type="text" matInput>
+                        <mat-icon matSuffix>http</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Question</mat-label>
+                        <input id="question" required name="question" [(ngModel)]="question" type="text" matInput
+                            placeholder="Enter the Question">
+                        <mat-icon matSuffix>help_outline</mat-icon>
+                    </mat-form-field>
+                    <div style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: center;">
+                        <button id="updateButton" [disabled]="signupForm.invalid" class="full-w" type="submit"
+                            mat-raised-button color="primary">Update</button>
+                        <button type="button" style="margin-left: 20px;" mat-raised-button color="warn"
+                            (click)="close()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

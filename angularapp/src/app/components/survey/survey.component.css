@@ -1,0 +1,17 @@
+.full-w {
+  width: 600px;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.btn {
+  display: block;
+  margin: auto;
+}
+.heading {
+  text-align: center;
+  color: rgb(86, 86, 236);
+  font-size: 40px;
+  margin-top: 30px;
+}

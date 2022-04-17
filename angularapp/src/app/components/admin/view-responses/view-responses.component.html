@@ -1,0 +1,21 @@
+<h1 mat-dialog-title style="font-size: 30px;" class="text-center">View Responses</h1>
+<div class="msg" *ngIf="survey.responses.length==0">
+    No one has taken this survey yet !! :)
+</div>
+<ng-container *ngFor="let r of survey.responses">
+    <mat-list class="card-x">
+        <mat-list-item>
+            <div class="box">
+                <div mat-line style="font-size: 23px;color: rgb(116, 138, 233); font-weight: 400;">Submitted
+                    By:&nbsp;<span style="color: black;">{{r.name}}</span></div>
+                <div mat-line style="font-size: 23px;color: rgb(116, 138, 233); font-weight: 400;">Email:&nbsp;<span
+                        style="color: black;">{{r.email}}</span></div>
+                <div mat-line style="font-size: 23px;color: rgb(116, 138, 233); font-weight: 400;">Answer:&nbsp;<span
+                        style="color: black;">{{r.answer}}</span></div>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</ng-container>
+<div class="btn">
+    <button type="button" mat-raised-button color="primary" (click)="close()">OK</button>
+</div>

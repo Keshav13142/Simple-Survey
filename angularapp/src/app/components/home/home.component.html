@@ -1,0 +1,32 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5  wauto">
+                <img src="https://assets-global.website-files.com/59d46c848021530001e0117b/5fd1bf73ba01e9060de09e2d_student-management-essentials-hero.png"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div class="container text-center" style="font-size: 27px; margin-bottom: 20px;">
+                    <mat-icon>poll</mat-icon>
+                    <button mat-button routerLink="/login" style="font-size: 27px;">Take Your Survey</button>
+                </div>
+                <mat-card id="loginBox">
+                    <h2 style="margin-bottom: 20px; color: rgb(73, 73, 250);" class="text-center">Enter the unique of
+                        the survey
+                    </h2>
+                    <form #searchForm="ngForm" (ngSubmit)="checkUrl()">
+                        <mat-form-field class="full-w" appearance="outline">
+                            <mat-label>Question</mat-label>
+                            <input id="code" required name="code" [(ngModel)]="code" type="text" matInput
+                                placeholder="Enter The unique code">
+                            <mat-icon matSuffix>help_outline</mat-icon>
+                        </mat-form-field>
+                        <button class="btn" type="submit" [disabled]="searchForm.invalid" mat-raised-button
+                            color="primary">Take
+                            Survey</button>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

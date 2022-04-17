@@ -1,0 +1,43 @@
+.full-w {
+  width: 600px;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.icon {
+  margin-right: 10px;
+}
+.heading {
+  color: rgb(50, 50, 223);
+  text-align: center;
+  font-size: 30px;
+  margin: 60px 0px 40px 0px;
+}
+.btn {
+  display: block;
+  margin: auto;
+}
+.url {
+  text-align: center;
+}
+.w100 {
+  width: 100%;
+  display: block;
+}
+.card-x {
+  border: 1px solid rgb(167, 162, 162);
+  border-radius: 10px;
+  width: 1800px;
+  margin: 10px auto 10px auto;
+}
+.line {
+  font-size: 30px;
+}
+.msg {
+  font-size: 35px;
+  color: rgb(71, 68, 245);
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
